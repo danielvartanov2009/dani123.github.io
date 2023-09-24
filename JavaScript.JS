@@ -1,42 +1,43 @@
-// const time = new Date().getHours();
-// let hi;
+"use strict";
+const time = new Date().getHours();
+let hi;
 
-// if (time < 6) {
-//   hi = "Чё ты не спишь? Шучу"
-// } else if (time < 12) {
-//   hi = "Доброе утро";
-// } else if (time < 18) {
-//   hi = "Добрый день";
-// } else {
-//   hi = "Добрый вечер";
-// }
+if (time < 6) {
+  hi = "Чё ты не спишь? Шучу"
+} else if (time < 12) {
+  hi = "Доброе утро";
+} else if (time < 18) {
+  hi = "Добрый день";
+} else {
+  hi = "Добрый вечер";
+}
 
-// let day;
-// switch (new Date().getDay()) {
-//   case 0:
-//     day = "Воскресенье";
-//     break;
-//   case 1:
-//     day = "Понедельник";
-//     break;
-//   case 2:
-//     day = "Вторник";
-//     break;
-//   case 3:
-//     day = "Среда";
-//     break;
-//   case 4:
-//     day = "Четверг";
-//     break;
-//   case 5:
-//     day = "Пятница";
-//     break;
-//   case 6:
-//     day = "Суббота";
-//     break;
-// }
+let day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Воскресенье";
+    break;
+  case 1:
+    day = "Понедельник";
+    break;
+  case 2:
+    day = "Вторник";
+    break;
+  case 3:
+    day = "Среда";
+    break;
+  case 4:
+    day = "Четверг";
+    break;
+  case 5:
+    day = "Пятница";
+    break;
+  case 6:
+    day = "Суббота";
+    break;
+}
 
-// alert(`ЭТО БЕТА ВЕРСИЯ САЙТА. Вы можете добавить на сайт свою рекламу. По вопросам обращайтесь по приведенным в конце статьи адресам. ${hi}! Уже ${day}.`);
+alert(`ЭТО БЕТА ВЕРСИЯ САЙТА. Вы можете добавить на сайт свою рекламу. По вопросам обращайтесь по приведенным в конце статьи адресам. ${hi}! Уже ${day}.`);
 
 function checkCode() {
   let enteredCode = document.getElementById("codeInput").value;
