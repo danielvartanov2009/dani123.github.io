@@ -12,32 +12,42 @@ if (time < 6) {
   hi = "Добрый вечер";
 }
 
-let day;
-switch (new Date().getDay()) {
-  case 0:
-    day = "Воскресенье";
-    break;
-  case 1:
-    day = "Понедельник";
-    break;
-  case 2:
-    day = "Вторник";
-    break;
-  case 3:
-    day = "Среда";
-    break;
-  case 4:
-    day = "Четверг";
-    break;
-  case 5:
-    day = "Пятница";
-    break;
-  case 6:
-    day = "Суббота";
-    break;
+const currentDate = new Date();
+
+const currentDayOfWeek = currentDate.getDay();
+
+const dayToAvoidNotifications = 3;
+
+if (currentDayOfWeek !== dayToAvoidNotifications) {
 }
 
-alert(`ЭТО БЕТА ВЕРСИЯ САЙТА. Вы можете добавить на сайт свою рекламу. По вопросам обращайтесь по приведенным в конце статьи адресам. ${hi}! Уже ${day}.`);
+// const daytime = new Date().getDay();
+// let day;
+// switch (new Date().getDay()) {
+//   case 0:
+//     day = "Воскресенье";
+//     break;
+//   case 1:
+//     day = "Понедельник";
+//     break;
+//   case 2:
+//     day = "Вторник";
+//     break;
+//   case 3:
+//     day = "Среда";
+//     break;
+//   case 4:
+//     day = "Четверг";
+//     break;
+//   case 5:
+//     day = "Пятница";
+//     break;
+//   case 6:
+//     day = "Суббота";
+//     break;
+// }
+
+alert(`ЭТО БЕТА ВЕРСИЯ САЙТА. Вы можете добавить на сайт свою рекламу. По вопросам обращайтесь по приведенным в конце статьи адресам. ${hi}! Уже ${currentDate}.`);
 
 function checkCode() {
   let enteredCode = document.getElementById("codeInput").value;
