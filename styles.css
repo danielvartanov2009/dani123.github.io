@@ -179,11 +179,10 @@ figcaption {
   text-decoration: overline;
 }
 
-ol.d {
+ol {
   text-align: center;
   border-collapse: collapse;
   border-radius: 10px;
-  font-size: 25px;
 }
 
 p {
