@@ -1,4 +1,3 @@
-"use strict";
 const time = new Date().getHours();
 let hi;
 
@@ -12,42 +11,60 @@ if (time < 6) {
   hi = "Добрый вечер";
 }
 
-const currentDate = new Date();
+let slideIndex = 1;
+showSlides(slideIndex);
 
-const currentDayOfWeek = currentDate.getDay();
-
-const dayToAvoidNotifications = 3;
-
-if (currentDayOfWeek !== dayToAvoidNotifications) {
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-// const daytime = new Date().getDay();
-// let day;
-// switch (new Date().getDay()) {
-//   case 0:
-//     day = "Воскресенье";
-//     break;
-//   case 1:
-//     day = "Понедельник";
-//     break;
-//   case 2:
-//     day = "Вторник";
-//     break;
-//   case 3:
-//     day = "Среда";
-//     break;
-//   case 4:
-//     day = "Четверг";
-//     break;
-//   case 5:
-//     day = "Пятница";
-//     break;
-//   case 6:
-//     day = "Суббота";
-//     break;
-// }
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-alert(`ЭТО БЕТА ВЕРСИЯ САЙТА. Вы можете добавить на сайт свою рекламу. По вопросам обращайтесь по приведенным в конце статьи адресам. ${hi}! Уже ${currentDate}.`);
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+const daytime = new Date().getDay();
+let day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Воскресенье";
+    break;
+  case 1:
+    day = "Понедельник";
+    break;
+  case 2:
+    day = "Вторник";
+    break;
+  case 3:
+    day = "Среда";
+    break;
+  case 4:
+    day = "Четверг";
+    break;
+  case 5:
+    day = "Пятница";
+    break;
+  case 6:
+    day = "Суббота";
+    break;
+}
+
+alert(`ЭТО БЕТА ВЕРСИЯ САЙТА. Вы можете добавить на сайт свою рекламу. По вопросам обращайтесь по приведенным в конце статьи адресам. ${hi}! Уже ${day}.`);
 
 function checkCode() {
   let enteredCode = document.getElementById("codeInput").value;
